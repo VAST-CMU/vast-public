@@ -1,10 +1,10 @@
-name: Sampa
+name: VAST
 url: http://sampa.cs.washington.edu
 
 exclude: [bibble, README.md, Makefile, Dockerfile]
 
 # use this library to parse Markdown
-markdown: redcarpet
+markdown: kramdown
 redcarpet:
     extensions: [smart, tables, with_toc_data, strikethrough]
 
@@ -39,10 +39,12 @@ collections:
 navigation:
     - title: Home
       link: /
-    - title: Research
-      link: /research/
-    - title: Publications
-      link: /publications.html
+#    - title: Research
+#      link: /research/
+    - title: People
+      link: /people.html
+#    - title: Publications
+#      link: /publications.html
 
 # Navigation bar links for WACAS.
 nav_wacas:

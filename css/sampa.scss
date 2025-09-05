@@ -1,6 +1,7 @@
 ---
 # Frontmatter is necessary to make Jekyll process this into sampa.css.
 ---
+@use "sass:math";
 
 $light-gray: #e5e5e5;
 $dark-gray: #888;
@@ -100,7 +101,7 @@ a {
     
     .card-title {
         // undo extra margin set above for normal headings elsewhere
-        h3 { margin-top: 0em; }
+        h2 { margin-top: 0em; }
         padding-bottom: .5rem;
     }
     
@@ -160,9 +161,10 @@ ul.people {
         // draw empty gray circle for those without a profile pic
         .noprofile {
             fill: #f5f5f5;
-            r: $profile-size / 2;
-            cx: $profile-size / 2;
-            cy: $profile-size / 2;
+            // sampa.scss (lines 159-161)
+            r: math.div($profile-size, 2);
+            cx: math.div($profile-size, 2);
+            cy: math.div($profile-size, 2);
         }
     }
 
@@ -367,4 +369,82 @@ ul.news {
 }
 
 #proj-people {
+}
+
+.posts {
+  font-family: Arial, sans-serif;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.posts header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.posts h3 {
+  font-size: 2.5em;
+  color: #333;
+}
+
+.schedule-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden; /* Ensures rounded corners on the table */
+}
+
+.schedule-table thead {
+  background-color: #107003;
+  color: white;
+}
+
+.schedule-table thead th {
+  padding: 15px;
+  text-align: left;
+  font-weight: bold;
+  border-right: 1px solid rgba(255, 255, 255, 0.2); /* Lighter divider for header */
+}
+
+.schedule-table thead th:last-child {
+  border-right: none; /* No divider on the last column */
+}
+
+.schedule-table tbody {
+  border-top: 2px solid #5E6D55; /* Solid top border to match header */
+}
+
+.schedule-table tbody tr {
+  border-bottom: 1px solid #ddd;
+}
+
+.schedule-table tbody tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+.schedule-table tbody tr:hover {
+  background-color: #f1f1f1;
+}
+
+.schedule-table td {
+  padding: 15px;
+  vertical-align: top;
+  border-right: 1px solid #e0e0e0; /* Gray divider for body cells */
+}
+
+.schedule-table td:last-child {
+  border-right: none; /* No divider on the last column */
+}
+
+.schedule-table td a {
+  color: #007BFF;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.schedule-table td a:hover {
+  text-decoration: underline;
 }

@@ -1,11 +1,28 @@
 ---
 layout: default
-title: News and Blog
+title: 2025 Fall Schedule
 ---
-<ul class="news">
-{% for post in site.posts %}
-    {% include news-item.html item=post %}
-{% endfor %}
-</ul>
 
-<p><a href="{{ site.base }}/oldnews.html">See archived news posts.</a></p>
+<div class="posts">
+
+  <table class="schedule-table">
+    <thead>
+      <tr>
+        <th>Meeting & Date</th>
+        <th>Presenter</th>
+        <th>Contents Cover</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% assign meetings = site.posts %}
+      {% for post in meetings reversed %}
+        <tr>
+          <td>{{ post.meeting_number }}: {{ post.date | date: "%B %-d, %Y" }}</td>
+          <td>{{ post.presenter }}</td>
+          <td>{{ post.title }}</td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+<!--<p><a href="{{ site.base }}/oldnews.html">See archived news posts.</a></p>-->
