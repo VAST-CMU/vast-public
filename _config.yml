@@ -1,6 +1,5 @@
 name: VAST
 url: http://vast.cmu.github.io
-title: "VAST Reading Group"
 
 exclude: [bibble, README.md, Makefile, Dockerfile]
 
@@ -30,7 +29,7 @@ roles:
 front_page_news: 4
 
 # Base pathname for links.
-base: ''
+base: 'vast-public'
 
 collections:
   projects:
