@@ -14,29 +14,74 @@ role_remain:
 ---
 
 <div class="jumbotron">
-  <p>
-      Welcome to the homepage of the
-        <br>Variational Analysis and Statistical Theory Reading Group at CMU
-  </p>
+  <p>Welcome to the homepage of the<br>
+    <strong>Variational Analysis and Statistical Theory Reading Group</strong> at CMU</p>
 </div>
 
-Variational analysis, derived as an extension of classical real and convex analysis, deals with non-smooth optimization problems, and perturbation analysis
-(i.e., how do the solutions change when the objective function or estimating function are changed "slightly"?)
-The idea to use variational analysis for statistical theory is not new, but mostly forgotten.
-Starting from Chernoff (1954, AoMS), several statisticians have used these tools to obtain asymptotic distribution results.
-Through this reading group, we learn more and derive reliable inference methods for irregular problems
-(including high-dimensional methods such as lasso or Dantzig selector).
+<div class="container my-4">
+  <p>
+    Variational analysis, derived as an extension of classical real and convex analysis,
+    deals with non-smooth optimization problems and perturbation analysis
+    (i.e., how solutions change when the objective or estimating function is changed
+    <em>slightly</em>).
+  </p>
+  <p>
+    The idea to use variational analysis for statistical theory is not new, but mostly forgotten.
+    Starting from Chernoff (1954, <em>Annals of Mathematical Statistics</em>),
+    several statisticians have used these tools to obtain asymptotic distribution results.
+    Through this reading group, we learn more and derive reliable inference methods for irregular problems
+    (including high-dimensional methods such as lasso or Dantzig selector).
+  </p>
 
+  <hr class="my-4">
 
-<!--&lt;!&ndash;{% if page.notitle != true %}&ndash;&gt;-->
-<!--&lt;!&ndash;  <h1>{{ page.title }}</h1>&ndash;&gt;-->
-<!--&lt;!&ndash;  {% if page.people %}&ndash;&gt;-->
-<!--&lt;!&ndash;  <div>&ndash;&gt;-->
-<!--&lt;!&ndash;  {% include project-people.html people=page.people %}&ndash;&gt;-->
-<!--&lt;!&ndash;  </div>&ndash;&gt;-->
-<!--&lt;!&ndash;  {% endif %}&ndash;&gt;-->
-<!--&lt;!&ndash;{% endif %}&ndash;&gt;-->
+  <h5>Meeting Information</h5>
+  <p>
+    Unless otherwise notified, our regular weekly meeting for <strong>Fall 2025</strong> is:<br>
+    <strong>Mondays, 11:00–12:00 pm</strong> at <strong>BH 229A</strong>
+  </p>
 
-<div class="content">
-    {{ content }}
+  <h5>Contact</h5>
+  <p>
+    To join our mailing list, please email: Woonyoung Chang or Kenta Takatsu at {woonyouc, ktakatsu}@cmu.edu.
+  </p>
+
+  <h5>Resources</h5>
+  <p>
+    <a href="https://docs.google.com/spreadsheets/d/1NACVjOpF9k9vm0B6bGipwi-qkMqnplGve_2CzGWpe6U/edit?gid=1044264005#gid=1044264005"
+       target="_blank" class="btn btn-outline-primary">
+      Paper Suggestions &amp; Presentation Sign-Up
+    </a>
+  </p>
+
+  <h5>Past meetings</h5>
+  <p>
+    <table class="schedule-table">
+    <thead>
+      <tr>
+        <th>Meeting & Date</th>
+        <th>Presenter</th>
+        <th>Contents Cover</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% assign meetings = site.posts %}
+      {% for post in meetings reversed %}
+        <tr>
+          <td>{{ post.meeting_number }}: {{ post.date | date: "%B %-d, %Y" }}</td>
+          <td>{{ post.presenter }}</td>
+          <td>
+            {{ post.title }}
+            {% if post.links %}
+            <br>—
+            {% for l in post.links %}
+            <a href="{{ l.url }}" target="_blank">{{ l.text }}</a>{% unless forloop.last %}, {% endunless %}
+            {% endfor %}
+            {% endif %}
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  </p>
 </div>

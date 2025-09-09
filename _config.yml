@@ -37,12 +37,12 @@ collections:
 
 # Navigation bar links.
 navigation:
-    - title: Home
-      link: /
+#    - title: Home
+#      link: /
 #    - title: Research
-#      link: /research/
-    - title: People
-      link: /people.html
+##      link: /research/
+#    - title: People
+#      link: /people.html
 #    - title: Publications
 #      link: /publications.html
 
@@ -57,7 +57,7 @@ nav_wacas:
 wiki_redirects:
     People: people.html
     Projects: research/
-    Publications: publications.html
+#    Publications: publications.html
     EnerJ: research/approximation/enerj.html
     WebChar: research/webchar.html
     Concurrency_Bug_Detection_and_Avoidance: research/concurrencybugs.html
