@@ -29,7 +29,7 @@ roles:
 front_page_news: 4
 
 # Base pathname for links.
-base: 'vast-public'
+baseurl: "/vast-public"
 
 collections:
   projects:

@@ -4,19 +4,19 @@
         <meta charset="utf-8">
         <title>{{ site.name }}: {{ page.title }}</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link href="{{site.base}}/css/bootstrap.min.css" rel="stylesheet">
-        <link href="{{site.base}}/css/sampa.css" rel="stylesheet">
+        <link href="{{ '/css/bootstrap.min.css' | relative_url }}" rel="stylesheet">
+        <link href="{{ '/css/sampa.css' | relative_url }}" rel="stylesheet">
         <link rel="alternate" type="application/atom+xml" title="Atom"
-            href="{{ site.base }}/blog/blog.xml">
+              href="{{ '/blog/blog.xml' | relative_url }}">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="shortcut icon" href="http://www.cs.washington.edu/sites/default/files/favicon_0.ico" type="image/vnd.microsoft.icon">
     </head>
     <body>      
         <div class="container">
           <div class="header">
-            <a href="{{ site.base }}/">
-                <img src="{{ site.base }}/img/logo.001.png"
-                    srcset="{{ site.base }}/img/logo.001.png"
+            <a href="{{ site.baseurl }}/">
+                <img src="{{ site.baseurl }}/img/logo.001.png"
+                    srcset="{{ site.baseurl }}/img/logo.001.png"
                     alt="VAST" id="logo">
             </a>
             <ul class="nav nav-pills pull-right">
@@ -39,9 +39,9 @@
 
         <!-- Support retina images. -->
         <script type="text/javascript"
-            src="{{ site.base }}/js/srcset-polyfill.js"></script>
+            src="{{ site.baseurl }}/js/srcset-polyfill.js"></script>
         <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-        <script src="{{site.base}}/js/bootstrap.min.js"></script>
+        <script src="{{site.baseurl}}/js/bootstrap.min.js"></script>
         
     </body>
 </html>
