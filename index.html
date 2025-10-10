@@ -69,7 +69,13 @@ role_remain:
       {% for post in meetings reversed %}
         <tr>
           <td>{{ post.meeting_number }}: {{ post.date | date: "%B %-d, %Y" }}</td>
-          <td>{{ post.presenter }}</td>
+          <td>
+            {% if post.presenter_link %}
+              <a href="{{ post.presenter_link }}" target="_blank">{{ post.presenter }}</a>
+            {% else %}
+              {{ post.presenter }}
+            {% endif %}
+          </td>
           <td>
             {{ post.title }}
             {% if post.links %}
